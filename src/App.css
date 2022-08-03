@@ -1,0 +1,83 @@
+.App{
+
+  background: linear-gradient(
+   180deg,
+   rgba(238, 69, 64, 1) 0%,
+   rgba(199, 44, 65, 1) 15%,
+   rgba(128, 19, 54, 1) 30%,
+   rgba(81, 10, 50, 1) 45%,
+   rgba(45, 20, 44, 1) 100%
+  )
+ }
+ 
+ .navBg{
+   background-color: #282c34;
+ }
+ 
+ .carousel-inner{
+     width: 90%;
+     margin: auto;
+     height: 550px;
+     overflow: hidden;
+ }
+ 
+ .carousel-item {
+     padding: 50px;
+     display: flex; 
+     width: 500%;
+     animation: slider 20s infinite alternate;
+     animation-timing-function: linear;
+ }
+ 
+ .d-block {
+   width: 90%;
+   height: 550px;
+ }
+ 
+ .tittle {
+   color:aliceblue;
+   text-align:center;
+   padding: 35px;
+ }
+
+ 
+ .text{
+   color:aliceblue;
+   text-align:justify;
+   padding-left: 80px;
+   padding-right: 80px;
+   font-size: 20px;
+ }
+ 
+ .card:hover {
+   box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.2);
+ }
+ 
+ .card-body {
+   padding: 2rem 0;
+   height: 230px;
+ }
+ 
+ .card-text {
+   padding: 0.3rem 1rem;
+   font-size: 1rem;
+   color: aliceblue;
+ }
+ 
+ .card-img{
+  height: 400px;
+ }
+ 
+ .col-md-4{
+ padding-top: 50px;
+ padding: 50px;
+ }
+ 
+ .text-center {
+ background-color: #282c34;
+ }
+ 
+ 
+ .p-4 {
+   background-color: rgba(0, 0, 0, 0.2);
+ }
