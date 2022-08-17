@@ -1,6 +1,7 @@
-import React from "react";
+import { useState } from "react";
 
 export const  usePerson = () => {
+    const [dataPeople, setDataPeople] = useState([]);
 
     const getAllPerson = () => {
 
@@ -17,6 +18,7 @@ export const  usePerson = () => {
     }
 
     return {
-        getAllPerson
-    };
+        getAllPerson, dataPeople
+    }
 }
+
