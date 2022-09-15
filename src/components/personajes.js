@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import Image7 from '../img/imagen7.jpg'
-
 
 export const Personajes = () => {
 
@@ -45,6 +45,9 @@ export const Personajes = () => {
                                 <p className='card-text text-secondary'>{people.skin_color}</p>
                                 </div>
                             </div>
+                                <Link to={`/details/${people.name}`} key ={people.name}>
+                                <a className='btn btn-outline-secondary'>Detalle</a>
+                                </Link>
                         </div> 
                     </div> 
                 ))
@@ -57,4 +60,3 @@ export const Personajes = () => {
 }
 
 export default Personajes
-

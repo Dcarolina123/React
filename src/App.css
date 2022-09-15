@@ -86,3 +86,33 @@
    max-height: 135px ;
    overflow-y: auto;
  }
+
+ .text p{
+
+  text-align: left;
+}
+
+.imagen{
+  width: 50%;
+  justify-content: center;
+  position: absolute;
+  display: flex;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.container_imagen img{
+  width: 350px;
+  margin: 30px;
+}
+
+.text_data{
+  margin: 30px;
+}
+
+.text_data p{
+  color: white;
+}
