@@ -9,7 +9,6 @@ function Card ({title, Image, text})  {
                         <div className='card-body text-light' >
                             <h4 className='card-tittle'>{title}</h4>
                                 <p className='card-text text-secondary'>{text}</p>
-                                <a href="#!" className='btn btn-outline-secondary'>Entrar</a>
                         </div>
                     </div>  
                 </div>

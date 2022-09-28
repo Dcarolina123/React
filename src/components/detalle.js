@@ -29,38 +29,25 @@ export const Detalles = () => {
 
     return (   
     <div className='container'>
-
- 
-       <button className='boton_atras'>
-                <a href='../Planetas'></a>
-            </button>
-
         <h1 className='tittle'>DETALLE DEL PERSONAJE</h1>
-
         <div className='container_imagen'>
             <img src={Image7}/>
         </div>
-        <div className='text_data'>
-        <div className="ms-4 text-warning">
-            <h3 className='text'>Nombre: {nombre}</h3>
-        </div>
             <div className="ms-4">
-                {filtro.map((persona) => (
-                <div key={persona.name} className="row mt-4">
-
+                {
+                filtro.map((people) => (
+                <div className="row mt-4" key={people.name} >
                     <div className="col-md-6">
-                      <p><b className='card-tittle'>Creado:</b> {persona.created}</p>
-                      <p><b className='card-tittle'>Año de nacimiento:</b> {persona.birth_year}</p>
-                      <p><b className='card-tittle'>Altura:</b> {persona.height} cm</p>
-                      <p><b className="text-warning">Peso:</b> {persona.mass} kg</p>
-                      <p><b className="text-warning">Genero:</b> {persona.gender}</p>
-                    </div>
 
-                    <div className="col-md-6">
-                      <p><b className="text-warning">Editado:</b> {persona.edited}</p>
-                      <p><b className="text-warning">Color de ojos:</b> {persona.eye_color}</p>
-                      <p><b className="text-warning">Color de cabello:</b> {persona.hair_color}</p>
-                      <p><b className="text-warning">Color de piel:</b> {persona.skin_color}</p>
+                      <p><b className='card-tittle'>Creado:</b> {people.created}</p>
+                      <p><b className='card-tittle'>Año de nacimiento:</b> {people.birth_year}</p>
+                      <p><b className='card-tittle'>Altura:</b> {people.height} cm</p>
+                      <p><b className='card-tittle'>Peso:</b> {people.mass} kg</p>
+                      <p><b className='card-tittle'>Genero:</b> {people.gender}</p>
+                      <p><b className="text-warning">Editado:</b> {people.edited}</p>
+                      <p><b className="text-warning">Color de ojos:</b> {people.eye_color}</p>
+                      <p><b className="text-warning">Color de cabello:</b>{people.hair_color}</p>
+                      <p><b className="text-warning">Color de piel:</b> {people.skin_color}</p>
                     </div>
                     
                 </div>
@@ -68,7 +55,6 @@ export const Detalles = () => {
             </div>
         </div>
         
-    </div>
             )
         }
 

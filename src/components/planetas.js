@@ -1,62 +1,48 @@
 import React, { useEffect, useState } from 'react'
-import Image7 from '../img/imagen7.jpg'
+import Image8 from '../img/imagen8.jpg'
 import { Link } from 'react-router-dom';
 
+export const Planets = () => {
 
-export const Planetas = () => {
-
-    const {getAllPlanets,dataPlanets, Counter, Preview, Next} = usePlanets();
-    const [disabledL, setDisabledL] = useState(false);
-    const [disabledR, setDisabledR] = useState(false);
-  
-    useEffect(()=>{
-  
-      getAllPlanets(Counter);
-  
-      if(Counter ===6){
-        setDisabledR(true);
-      } else {
-        setDisabledR(false);
-      }
-  
-      if(Counter ===1){
-        setDisabledL(true);
-      } else {
-        setDisabledL(false);
-      }
-  
-    }, [dataPlanets])
-    
+    const[Planets, setPlanets] = useState([]);
+     
+      useEffect(() => {
+        async function fetchPlanets(){
+          const Planetas = await fetch ('https://swapi.dev/api/planets/');
+          const data = await Planetas.json();
+          setPlanets(data.results);
+        }
+        fetchPlanets();
+      },[]);
+   
   return (   
       <div>
            <h1 className='tittle'>Planetas</h1>
-          <div className='container d-flex justify-content-center align-items-center h-100'>  
+           <div className='container d-flex justify-content-center align-items-center h-100'>  
         <div className='row'> 
             {
-                Planetas.map(Planetas =>(
-                    <div className='col-md-4' key={setPlanetas}>
+                Planets.map(Planets =>(
+            <div className='col-md-4' key={setPlanets}>
                         <div className='card text-center bg-dark'>
-                            <img src={Image7} alt=''className='card-img'></img>
+                            <img src={Image8} alt=''className='card-img'></img>
                             <div className='scroll'>
                             <div className='card-body text-light' >
-                                <h4 className='card-tittle'>{planetas.name}</h4>
-                                <h6 className='card-tittle'>Periodo de Rotacion:</h6>
-                                <p className='card-text text-secondary'>{planetas.rotation_period}</p>
-                                <h6 className='card-tittle'>Peridoo Orbital:</h6>
-                                <p className='card-text text-secondary'>{planetas.orbital_period}</p>
-                                <h6 className='card-tittle'>Diametro:</h6>
-                                <p className='card-text text-secondary'>{planetas.diameter}</p>
+                                <h4 className='card-tittle'>{Planets.name}</h4>
+                                <h6 className='card-tittle'>Diamtero:</h6>
+                                <p className='card-text text-secondary'>{Planets.diameter}</p>
                                 <h6 className='card-tittle'>Clima:</h6>
-                                <p className='card-text text-secondary'>{planetas.climate}</p>
-                                <h6 className='card-tittle'>Gravedad: </h6>
-                                <p className='card-text text-secondary'> {planetas.gravity}</p>
+                                <p className='card-text text-secondary'>{Planets.climate}</p>
+                                <h6 className='card-tittle'>Gravedad:</h6>
+                                <p className='card-text text-secondary'>{Planets.gravity}</p>
                                 <h6 className='card-tittle'>Terreno:</h6>
-                                <p className='card-text text-secondary'>{planetas.terrain}</p>
-                                <h6 className='card-tittle'>Superficie del Agua:</h6>
-                                <p className='card-text text-secondary'>{planetas.surface_water}</p>
+                                <p className='card-text text-secondary'>{Planets.terrain}</p>
+                                <h6 className='card-tittle'>Población:</h6>
+                                <p className='card-text text-secondary'>{Planets.population}</p>
+                                <h6 className='card-tittle'>Creación:</h6>
+                                <p className='card-text text-secondary'>{Planets.created}</p>
                                 </div>
                             </div>
-                                <Link to={`/Detalleplaneta/${planetas.name}`} key ={planetas.name}>
+                                <Link to={`/detalle/${Planets.name}`} key ={Planets.name}>
                                 <a className='btn btn-outline-secondary'>Detalle</a>
                                 </Link>
                         </div> 
@@ -70,4 +56,4 @@ export const Planetas = () => {
   )
 }
 
-export default Planetas
+export default Planets
