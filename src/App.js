@@ -5,7 +5,7 @@ import Home from './components/home';
 import NavBarExample from './layouts/navbar';
 import Planetas from './components/planetas';
 import Personajes from './components/personajes';
-import Detalles from './components/detalle';
+import Detalles from './components/detallePersonaje';
 import DetallePlaneta from './components/detalleplaneta';
 
 

@@ -45,9 +45,9 @@ export const Personajes = () => {
                                 <p className='card-text text-secondary'>{people.skin_color}</p>
                                 </div>
                             </div>
-                                <Link to={`/detalle/${people.name}`} key ={people.name}>
-                                <a className='btn btn-outline-secondary'>Detalle</a>
-                                </Link>
+                            <Link to={`/detalle/${people.url.split('/')[5]}`} key ={people.name}>
+                              <a className='btn btn-outline-secondary'>Detalle</a>
+                            </Link>
                         </div> 
                     </div> 
                 ))
